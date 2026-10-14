@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre- and Post-Natal Family Playbook | NNUH</title>
+  <meta name="description" content="Personal pre- and post-natal planning playbook, hospital birth plan, gear checklist, care plan, and postpartum recovery guide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8faf9;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f3;
+      --surface-border: #e2e8e5;
+      --text: #21332c;
+      --text-muted: #5e736a;
+      --primary: #2d6a4f;
+      --primary-hover: #1b4332;
+      --primary-subtle: #d8f3dc;
+      --accent: #d97706;
+      --accent-subtle: #fef3c7;
+      --danger: #b91c1c;
+      --danger-subtle: #fee2e2;
+      --safe: #15803d;
+      --safe-subtle: #dcfce7;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow: 0 4px 20px -2px rgba(23, 49, 39, 0.06);
+      --shadow-lg: 0 10px 30px -4px rgba(23, 49, 39, 0.1);
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Playfair Display', Georgia, serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111a16;
+      --surface: #18241f;
+      --surface-subtle: #21322b;
+      --surface-border: #2a3f36;
+      --text: #e7f0ec;
+      --text-muted: #95aba1;
+      --primary: #52b788;
+      --primary-hover: #74c69d;
+      --primary-subtle: #1c3629;
+      --accent: #fbbf24;
+      --accent-subtle: #382d12;
+      --danger: #f87171;
+      --danger-subtle: #3d1b1b;
+      --safe: #4ade80;
+      --safe-subtle: #193823;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 30px -4px rgba(0, 0, 0, 0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Emergency Alert Bar */
+    .emergency-bar {
+      background: var(--danger);
+      color: #ffffff;
+      padding: 0.6rem 1rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .emergency-bar a {
+      color: #ffffff;
+      text-decoration: underline;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(255,255,255,0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+    }
+    .emergency-bar a:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* App Layout */
+    .app-container {
+      display: flex;
+      min-height: calc(100vh - 45px);
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 280px;
+      background: var(--surface);
+      border-right: 1px solid var(--surface-border);
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 45px;
+      height: calc(100vh - 45px);
+      z-index: 90;
+      transition: transform 0.3s ease;
+    }
+    .sidebar-header {
+      padding: 1.5rem 1.25rem 1rem;
+      border-bottom: 1px solid var(--surface-border);
+    }
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 1rem 0.75rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .nav-item {
+      margin-bottom: 0.3rem;
+    }
+    .nav-btn {
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-md);
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nav-btn .icon {
+      font-size: 1.15rem;
+      width: 24px;
+      text-align: center;
+    }
+    .nav-btn:hover {
+      background: var(--surface-subtle);
+      color: var(--text);
+    }
+    .nav-btn.active {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .sidebar-footer {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--surface-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .theme-toggle-btn {
+      background: var(--surface-subtle);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      padding: 0.45rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      padding: 2.5rem 3rem 4rem;
+      max-width: 1050px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Tab Section Panels */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Typography & Headers */
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .section-lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      color: var(--text);
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--text);
+    }
+
+    /* Cards & Containers */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .card.accent {
+      border-left: 4px solid var(--primary);
+    }
+    .card.alert {
+      border-left: 4px solid var(--danger);
+      background: var(--surface);
+    }
+    .card.warning {
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Badges & Tags */
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tag-essential { background: var(--danger-subtle); color: var(--danger); }
+    .tag-weeks { background: var(--accent-subtle); color: var(--accent); }
+    .tag-later { background: var(--surface-subtle); color: var(--text-muted); }
+    .tag-safe { background: var(--safe-subtle); color: var(--safe); }
+    .tag-nhs { background: #dbeafe; color: #1e40af; }
+
+    /* Interactive Checklist */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface-subtle);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .checklist-item:hover {
+      border-color: var(--primary);
+    }
+    .checklist-item.checked {
+      opacity: 0.65;
+      text-decoration: line-through;
+      background: var(--surface);
+    }
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.25rem;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+    .checklist-text {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+    .checklist-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+    }
+    .data-table th, .data-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--surface-border);
+    }
+    .data-table th {
+      background: var(--surface-subtle);
+      font-weight: 600;
+      color: var(--text);
+    }
+    .data-table tr:hover {
+      background: var(--surface-subtle);
+    }
+
+    /* Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin: 1rem 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    /* Interactive Calculator / Tools */
+    .tool-box {
+      background: var(--surface-subtle);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .tool-box input, .tool-box select {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--surface-border);
+      background: var(--surface);
+      color: var(--text);
+      margin-right: 0.5rem;
+    }
+    .btn {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: var(--surface-subtle);
+    }
+
+    /* Copy Button */
+    .copy-box {
+      background: var(--surface-subtle);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      position: relative;
+      margin: 0.75rem 0;
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+    }
+
+    /* Mobile Header & Bottom Nav */
+    .mobile-header {
+      display: none;
+      background: var(--surface);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--surface-border);
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 45px;
+      z-index: 80;
+    }
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    @media (max-width: 860px) {
+      .app-container { flex-direction: column; }
+      .mobile-header { display: flex; }
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        box-shadow: var(--shadow-lg);
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 85;
+      }
+      .sidebar-backdrop.open { display: block; }
+      .main-content { padding: 1.5rem 1rem 3rem; }
+      h1 { font-size: 1.8rem; }
+    }
+
+    /* Print Styles for Midwife Handout */
+    @media print {
+      .emergency-bar, .sidebar, .mobile-header, .theme-toggle-btn, .btn, .no-print {
+        display: none !important;
+      }
+      .app-container { display: block; }
+      .main-content { padding: 0; max-width: 100%; }
+      .tab-panel { display: none !important; }
+      #tab-birth-plan { display: block !important; }
+      body { background: #ffffff; color: #000000; }
+      .card { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Emergency Triage Bar -->
+  <aside class="emergency-bar" aria-label="Emergency Contact Bar">
+    <span>🚨 <strong>NNUH Maternity Triage 24/7:</strong></span>
+    <a href="tel:01603287328">📞 01603 287328</a>
+    <a href="tel:01603287329">📞 01603 287329</a>
+    <span style="opacity: 0.8; font-weight: 400; font-size: 0.8rem;">(Waters breaking, regular contractions 3 in 10, bleeding)</span>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <div class="mobile-header">
+    <div style="font-family: var(--font-heading); font-weight: 600;">👶 Pre & Post-Natal Hub</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar" aria-label="Main Navigation">
+      <div class="sidebar-header">
+        <div class="brand-title">👶 Baby Playbook</div>
+        <div class="brand-subtitle">NNUH & NHS Edition</div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <button class="nav-btn active" data-tab="tab-overview">
+            <span class="icon">🏠</span> Dashboard & Action
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-birth-plan">
+            <span class="icon">🏥</span> 1. Birth Plan (NNUH)
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-bags">
+            <span class="icon">🎒</span> 1b. Hospital Bags
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-gear">
+            <span class="icon">🛒</span> 2. Gear Checklist
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-care-plan">
+            <span class="icon">🗓️</span> 3. Phased Care Plan
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-recovery">
+            <span class="icon">🌸</span> 4. Postpartum Recovery
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-admin">
+            <span class="icon">📋</span> 5. Admin & Health
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-tab="tab-visitors">
+            <span class="icon">🤝</span> 6. Support & Visitors
+          </button>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <button class="theme-toggle-btn" id="themeToggle">
+          <span id="themeIcon">🌙</span> <span id="themeText">Night Mode</span>
+        </button>
+        <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.6rem;" onclick="window.print()" title="Print Birth Plan for Midwives">🖨️ Print</button>
+      </div>
+    </nav>
+
+    <!-- Main Content Panels -->
+    <main class="main-content">
+
+      <!-- ================= 0. OVERVIEW & ACTION DASHBOARD ================= -->
+      <section id="tab-overview" class="tab-panel active">
+        <h1>Welcome to Our Playbook</h1>
+        <p class="section-lead">A single source of truth for the birth, postpartum care, and arrival of our first baby.</p>
+
+        <!-- Quick Labour Action Card -->
+        <div class="card alert">
+          <h2 style="margin-top:0; color: var(--danger); font-size: 1.3rem;">⚡ In Labour? Partner 3-Step Action Plan</h2>
+          <ol style="margin-left: 1.25rem; margin-top: 0.5rem; line-height: 1.8;">
+            <li><strong>Assess & Support:</strong> Dim the room lights, turn on the birth playlist, offer water, set up the TENS machine, and start contraction timing.</li>
+            <li><strong>Call NNUH Maternity Triage (<a href="tel:01603287328" style="color:var(--danger); font-weight:700;">01603 287328</a>):</strong> Call when contractions occur <strong>3 times in 10 minutes</strong> lasting <strong>60 seconds</strong>, or immediately if waters break or fluid is discoloured. Have Badger Notes ready.</li>
+            <li><strong>Grab & Go:</strong> Grab the 3 hospital bags by the front door, ensure car seat is locked in, and drive to NNUH (West Outpatients / Maternity 20-min drop-off bay).</li>
+          </ol>
+        </div>
+
+        <!-- Quick Metrics & Status -->
+        <div class="grid-3">
+          <div class="card">
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Birth Location</div>
+            <div style="font-size: 1.15rem; font-weight: 700; margin: 0.25rem 0;">NNUH Delivery Suite</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">Colney Lane, Norwich, NR4 7UY</div>
+          </div>
+          <div class="card">
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Core Preferences</div>
+            <div style="font-size: 1.15rem; font-weight: 700; margin: 0.25rem 0;">Dim Light • No Pool</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">Active mobile pushing & progressive pain ladder</div>
+          </div>
+          <div class="card">
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">Feeding Plan</div>
+            <div style="font-size: 1.15rem; font-weight: 700; margin: 0.25rem 0;">Breastfeeding First</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">Dual-ready with starter formula backup</div>
+          </div>
+        </div>
+
+        <!-- Directory Jump Links -->
+        <h2>Quick Module Shortcuts</h2>
+        <div class="grid-2">
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-birth-plan')">
+            <h3>🏥 1. Birth Plan (NNUH)</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Midwife summary letter, tiered pain relief ladder, physiological pushing, and gentle C-section protocols.</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-bags')">
+            <h3>🎒 1b. Hospital Bags Checklist</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Interactive 3-bag packing list (Labour, Postnatal Stay, Partner/Baby) with auto-saving checkmarks.</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-gear')">
+            <h3>🛒 2. Gear & Nursery Checklist</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Priority-tagged equipment tracking (Next2Me, travel system, two-station changing, lean wardrobe).</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-care-plan')">
+            <h3>🗓️ 3. Phased Care Plan</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">First 72h homecoming, 9pm-2am / 2am-7am split night shifts, chore triage, and wake windows.</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-recovery')">
+            <h3>🌸 4. Postpartum Recovery</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Physical healing, interactive staggered pain calculator, emotional check-in, and mastitis care.</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-admin')">
+            <h3>📋 5. Admin & Health</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Norwich birth registration (within 42 days), HMRC Child Benefit, and MenB Calpol timer tool.</p>
+          </div>
+          <div class="card" style="cursor: pointer;" onclick="switchTab('tab-visitors')">
+            <h3>🤝 6. Support & Visitors</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">No hospital visitors, getting guests to do chores, and partner-led graceful exit strategies.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 1. BIRTH PLAN ================= -->
+      <section id="tab-birth-plan" class="tab-panel">
+        <h1>Birth Plan & Preferences</h1>
+        <p class="section-lead">Norfolk and Norwich University Hospital (NNUH) Delivery Suite / MLBU.</p>
+
+        <div class="card accent">
+          <h2 style="margin-top:0;">Letter to Attending Midwives & Obstetric Team</h2>
+          <p style="font-size: 0.95rem; line-height: 1.7;">
+            Thank you for supporting us during the birth of our first baby. We trust your professional clinical expertise. Our goal is a calm, positive, and safe birth. Below are our core preferences. Please discuss procedures with us using the <strong>BRAIN</strong> framework.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>🌿 Environment & Senses</h3>
+            <ul style="margin-left: 1.25rem; font-size: 0.92rem; line-height: 1.7;">
+              <li><strong>Lighting:</strong> Keep lights dimmed throughout labour and delivery.</li>
+              <li><strong>Sound:</strong> Ambient birth playlist playing via speaker.</li>
+              <li><strong>Birth Pool:</strong> We <strong>do not</strong> wish to use a birth pool.</li>
+              <li><strong>Calm Atmosphere:</strong> Quiet voices; avoid interrupting mum during active contractions.</li>
+              <li><strong>Students:</strong> Student midwives/doctors welcome if introduced politely beforehand.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🛡️ Partner Advocacy & BRAIN</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Partner is mum's primary advocate and gatekeeper for non-urgent questions.</p>
+            <div style="font-size: 0.88rem; background: var(--surface-subtle); padding: 0.75rem; border-radius: var(--radius-sm); line-height: 1.6;">
+              <strong>B</strong>enefits — <em>Why is this needed now?</em><br>
+              <strong>R</strong>isks — <em>What are the trade-offs?</em><br>
+              <strong>A</strong>lternatives — <em>What else can we try first?</em><br>
+              <strong>I</strong>ntuition — <em>How does mum feel?</em><br>
+              <strong>N</strong>othing / Next — <em>Can we wait 30–60 mins?</em>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🪜 Pain Relief Progression Ladder</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Method</th>
+                <th>Preference & Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tier 1</strong></td>
+                <td>Comfort & Movement</td>
+                <td>Rhythmic breathing, birthing ball, TENS machine on lower back, partner counter-pressure.</td>
+              </tr>
+              <tr>
+                <td><strong>Tier 2</strong></td>
+                <td>Inhaled Gas & Air</td>
+                <td>Entonox available as contractions intensify. (Keep lip balm on hand).</td>
+              </tr>
+              <tr>
+                <td><strong>Tier 3</strong></td>
+                <td>Medical Analgesia</td>
+                <td>Open to discussing Diamorphine/Pethidine or Epidural on Delivery Suite if labour is prolonged or pain becomes unmanageable.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>🤰 Labour & Pushing</h3>
+            <ul style="margin-left: 1.25rem; font-size: 0.92rem; line-height: 1.7;">
+              <li><strong>Monitoring:</strong> Intermittent Doppler monitoring preferred to keep mum mobile.</li>
+              <li><strong>Examinations:</strong> Minimal vaginal checks with prior consent.</li>
+              <li><strong>Positions:</strong> Freedom for upright, gravity-assisted positions (all-fours, kneeling over bed head, side-lying). No flat-on-back pushing.</li>
+              <li><strong>Perineum:</strong> Warm compresses; natural tear preferred over episiotomy unless baby is in distress.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>👶 The Golden Hour (Third Stage)</h3>
+            <ul style="margin-left: 1.25rem; font-size: 0.92rem; line-height: 1.7;">
+              <li><strong>Placenta:</strong> Active management (Syntometrine injection).</li>
+              <li><strong>Cord Clamping:</strong> Delayed Cord Clamping (2–3 mins until pulsing stops).</li>
+              <li><strong>Cord Cutting:</strong> Partner wishes to cut the umbilical cord.</li>
+              <li><strong>Skin-to-Skin:</strong> Immediate uninterrupted skin-to-skin for 1+ hours (defer weighing/wiping).</li>
+              <li><strong>Vitamin K:</strong> Consented single intramuscular injection for baby.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card warning">
+          <h3 style="margin-top:0;">⚠️ Contingencies: Gentle C-Section Protocol</h3>
+          <p style="font-size: 0.92rem; line-height: 1.6;">If transfer to theatre becomes necessary: Partner seated right next to mum's head throughout; our music playing in theatre; surgical screen lowered at delivery so we can see baby born; partner announces sex; immediate skin-to-skin directly on mum's chest (or partner's bare chest if mum is recovering).</p>
+        </div>
+      </section>
+
+      <!-- ================= 1b. HOSPITAL BAGS ================= -->
+      <section id="tab-bags" class="tab-panel">
+        <h1>Hospital Bags Packing List</h1>
+        <p class="section-lead">Interactive 3-bag packing system. Check items off as they are packed into the bags.</p>
+
+        <div class="card">
+          <h2>👜 Bag 1: Labour & Delivery (Take in immediately)</h2>
+          <ul class="checklist" data-storage-key="bag-labour">
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Maternity notes / Badger Notes app ready on phone</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">TENS Machine (fresh batteries + spare electrode pads)</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Mum's labour outfit (loose dark oversized T-shirt/gown)</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Warm fluffy bed socks + slip-on sliders/slippers</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Lip balm (crucial for Gas & Air dryness) + hair ties/clips</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Insulated water bottle with straw (easy for partner to hold)</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">High-energy snacks (jelly babies, flapjacks) + Lucozade Sport</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Phone charger with extra-long (2m–3m) cable + power bank</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Bluetooth speaker / ambient white noise player</div></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>🧳 Bag 2: Postnatal Ward Stay (Mum & Baby)</h2>
+          <div class="grid-2">
+            <div>
+              <h3>For Mum</h3>
+              <ul class="checklist" data-storage-key="bag-postnatal-mum">
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">2x button-down nursing nighties / PJs</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">1x comfortable going-home outfit (maternity joggers)</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">2x non-wired nursing bras + breast pads</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">8–10x high-waisted disposable pants / dark briefs</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">2x packs heavy cushioned maternity pads</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Upside-down peri bottle + lanolin nipple balm</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Toiletries (toothbrush, dry shampoo, dark towel)</div></li>
+              </ul>
+            </div>
+            <div>
+              <h3>For Baby</h3>
+              <ul class="checklist" data-storage-key="bag-postnatal-baby">
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">4x two-way zip sleepsuits (Newborn size)</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">4x short-sleeve bodysuits / vests (Newborn size)</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">2x 0–3 month sleepsuits (in case baby is large!)</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">1x pack newborn nappies (Size 0 or 1)</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">1x pack cotton wool pads or WaterWipes</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">2x cotton cellular blankets + 3x muslin cloths</div></li>
+                <li class="checklist-item"><input type="checkbox"><div class="checklist-text">1x cotton baby hat + cardigan for discharge</div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>🚗 Bag 3: Partner & Going-Home (Leave in Car Boot)</h2>
+          <ul class="checklist" data-storage-key="bag-partner">
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Infant car seat (clicked onto ISOFIX base in car)</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Warm car blanket for baby (to tuck over harness)</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Change of clothes + deodorant + toothbrush for partner</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Coins/card for NNUH car park (remember concession ticket!)</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text">Laundry bag for dirty hospital clothes</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= 2. GEAR CHECKLIST ================= -->
+      <section id="tab-gear" class="tab-panel">
+        <h1>Gear & Acquisition Checklist</h1>
+        <p class="section-lead">Priority-tiered equipment list. Items automatically save in your browser.</p>
+
+        <!-- Filters -->
+        <div style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;" class="no-print">
+          <button class="btn btn-primary gear-filter-btn" data-filter="all">Show All</button>
+          <button class="btn btn-outline gear-filter-btn" data-filter="essential">Day 1 Essentials</button>
+          <button class="btn btn-outline gear-filter-btn" data-filter="weeks">Weeks 1–4</button>
+          <button class="btn btn-outline gear-filter-btn" data-filter="later">Can Wait (2–3m+)</button>
+        </div>
+
+        <div class="card gear-group" data-group="sleep">
+          <h2>🛏️ Sleep & Nursery</h2>
+          <ul class="checklist" data-storage-key="gear-sleep">
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Co-sleeper Bedside Crib (Next2Me / SnuzPod)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Assembled next to mum's bed with drop-down side. New firm flat mattress.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Waterproof Mattress Protectors (x2) & Fitted Sheets (x3)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">100% breathable cotton sheets.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Cotton Cellular Blankets (x2–3)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">NHS approved open-weave breathable layering blankets.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>GroEgg Room Thermometer</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Monitors the 16°C–20°C safe sleep zone with colour glow.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>White Noise Machine (Dreamegg)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Rechargeable portable sound machine.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="weeks">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Non-Wi-Fi Video Baby Monitor</strong> <span class="tag tag-weeks">Weeks 1–4</span>
+                <div class="checklist-desc">Hack-proof dedicated parent unit with night vision.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="weeks">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Swaddle Pod / Sleep Bag (1.5–2.5 Tog)</strong> <span class="tag tag-weeks">Weeks 1–4</span>
+                <div class="checklist-desc">Love To Dream arms-up pod or newborn sleep bag.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card gear-group" data-group="travel">
+          <h2>🚗 Travel & Transport</h2>
+          <ul class="checklist" data-storage-key="gear-travel">
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>i-Size Infant Car Seat & ISOFIX Base</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Pre-installed in car; essential for hospital discharge.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Pram with Lie-Flat Carrycot</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Flat lie-flat bassinet protects newborn airway on daily walks.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Rearview Car Mirror</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">To check baby from driver's seat.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="weeks">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Ergonomic Baby Carrier (Ergobaby / BabyBjorn)</strong> <span class="tag tag-weeks">Weeks 1–4</span>
+                <div class="checklist-desc">Crucial for partner's daily 45-min soothing walks.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card gear-group" data-group="changing">
+          <h2>🚼 Diapering & Changing (2-Station Setup)</h2>
+          <ul class="checklist" data-storage-key="gear-changing">
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Nursery Changing Station + Downstairs Portable Caddy</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Caddy basket with nappies, wipes, mat, and cream on ground floor.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Newborn Nappies (Size 0 x1 pack, Size 1 x3 packs)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Pampers / Aldi Mamia / Kit & Kin.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Cotton Wool Balls + WaterWipes</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Warm water & cotton wool for first 2 weeks per NHS guidance.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Barrier Cream (Sudocrem / Bepanthen) & Muslin Squares (x12)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Multipurpose burp cloths and spit-up wipers.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card gear-group" data-group="feeding">
+          <h2>🍼 Feeding Hardware (Partner Quick Guide)</h2>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">Mum has already sorted the feeding equipment! Key locations & tools:</p>
+          <ul class="checklist" data-storage-key="gear-feeding">
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox" checked>
+              <div class="checklist-text">
+                <strong>Breastfeeding Pillow & Silverettes (Silver Cups)</strong> <span class="tag tag-safe">Sorted by Mum</span>
+                <div class="checklist-desc">Pillow on sofa; silver cups worn inside bra between nursing.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox" checked>
+              <div class="checklist-text">
+                <strong>Haakaa Silicone Collector & Lanolin Balm</strong> <span class="tag tag-safe">Sorted by Mum</span>
+                <div class="checklist-desc">Haakaa catches letdown from opposite breast during nursing.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox" checked>
+              <div class="checklist-text">
+                <strong>Sterilising Setup & Starter Bottles</strong> <span class="tag tag-safe">Sorted by Mum</span>
+                <div class="checklist-desc">Steriliser clean and ready in kitchen with anti-colic bottles.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox" checked>
+              <div class="checklist-text">
+                <strong>Ready-to-Feed Formula Starter Bottles (Emergency Stash)</strong> <span class="tag tag-safe">Sorted by Mum</span>
+                <div class="checklist-desc">Pre-mixed 70ml/200ml bottles in cupboard for zero-stress backup.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card gear-group" data-group="wardrobe">
+          <h2>👕 Baby Wardrobe (Lean Two-Way Zip Capsule)</h2>
+          <ul class="checklist" data-storage-key="gear-wardrobe">
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Two-Way Zip Sleepsuits (4–6 Newborn + 4–6 0–3m)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Integrated scratch mitts and feet. Two-way zips avoid 3am poppers.</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>Short-Sleeve Bodysuits / Vests (5–6 Newborn + 5–6 0–3m)</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Envelope necks (can pull down over shoulders if soiled).</div>
+              </div>
+            </li>
+            <li class="checklist-item" data-tier="essential">
+              <input type="checkbox">
+              <div class="checklist-text">
+                <strong>2x Knitted Cardigans + 2x Soft Cotton Hats</strong> <span class="tag tag-essential">Day 1 Essential</span>
+                <div class="checklist-desc">Hats for outdoor travel only, not for sleep.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= 3. PHASED CARE PLAN ================= -->
+      <section id="tab-care-plan" class="tab-panel">
+        <h1>Phased Care Plan (Days, Weeks & Months)</h1>
+        <p class="section-lead">Parent-baby roadmap for the first 72 hours, 4-week fourth trimester, and months 1–3.</p>
+
+        <div class="card accent">
+          <h2>🐣 Phase 1: The First 72 Hours (Homecoming)</h2>
+          <div class="grid-2">
+            <div>
+              <h3>Mum’s "Recovery Nest"</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6;">Set up mum's station in the living room and bedroom so she rarely needs to stand up:</p>
+              <ul style="margin-left: 1.25rem; font-size: 0.88rem; line-height: 1.7;">
+                <li>2L insulated water bottle with straw (hydration drives milk supply).</li>
+                <li>High-protein snacks (nuts, flapjacks, cheese).</li>
+                <li>Phone charger with 3m cable + lip balm.</li>
+                <li>Nursing pillow and silver cups.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>NHS Home Visits</h3>
+              <ul style="margin-left: 1.25rem; font-size: 0.88rem; line-height: 1.7;">
+                <li><strong>Day 1–2:</strong> Community Midwife home visit (checks mum's bleeding/perineum, baby jaundice, cord stump).</li>
+                <li><strong>Day 5:</strong> Midwife heel prick (Guthrie blood spot test) + baby weight check. (Partner: hold baby skin-to-skin during test).</li>
+                <li><strong>Day 3–4:</strong> Normal "Baby blues" hormonal drop. Be patient, kind, and reassuring.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Nappy Output Benchmarks</h3>
+          <table class="data-table">
+            <thead>
+              <tr><th>Day</th><th>Wet Nappies</th><th>Dirty Nappies</th><th>Stool Appearance</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Day 1</td><td>1–2</td><td>1+</td><td><strong>Meconium:</strong> Black, sticky, tar-like.</td></tr>
+              <tr><td>Day 2</td><td>2–3</td><td>1–2</td><td>Dark green/brown, softening.</td></tr>
+              <tr><td>Day 3</td><td>3–4</td><td>2–3</td><td>Greenish-yellow. Mature milk starts arriving.</td></tr>
+              <tr><td>Day 4</td><td>4–5</td><td>2–3</td><td>Golden yellow. Baby feeds 8–12x / 24h.</td></tr>
+              <tr><td>Day 5+</td><td>5–6+ heavy</td><td>2–4+</td><td><strong>Yellow & seedy:</strong> Classic breastfed stool.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>🌙 Phase 2: Weeks 1 to 4 (Split Night Shifts)</h2>
+          <p style="font-size: 0.92rem; margin-bottom: 1rem;">Protecting uninterrupted 4–5 hour sleep blocks is our primary operational rule.</p>
+
+          <div style="background: var(--surface-subtle); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+            <div style="font-weight: 700; color: var(--primary);">The "Feed & Pass" System:</div>
+            <div class="grid-2" style="margin-top: 0.5rem; font-size: 0.9rem;">
+              <div>
+                <strong>Shift 1: 9:00 PM – 2:00 AM (Partner On-Duty)</strong>
+                <p>Mum sleeps uninterrupted in spare room. Partner soothes baby in living room. When baby hungry, partner brings baby to mum in bed to nurse. Partner immediately takes baby back to burp, change, and settle.</p>
+              </div>
+              <div>
+                <strong>Shift 2: 2:00 AM – 7:00 AM (Mum On-Duty)</strong>
+                <p>Partner sleeps 5 solid hours undisturbed in spare room. Mum manages feeds and Next2Me crib. Partner wakes up at 7am to make coffee and breakfast.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <h3>Chore Triage</h3>
+              <p style="font-size: 0.9rem;">Only 3 household rules exist in month 1:</p>
+              <ol style="margin-left: 1.25rem; font-size: 0.88rem; line-height: 1.6;">
+                <li>Baby is fed, warm, and safe.</li>
+                <li>Mum is fed, hydrated, and resting.</li>
+                <li>Dishes and baby laundry keep rotating.</li>
+              </ol>
+            </div>
+            <div>
+              <h3>Daily 45-Min Partner Walk</h3>
+              <p style="font-size: 0.88rem; line-height: 1.6;">Partner takes baby in pram/carrier outside every afternoon. Baby sleeps, partner gets exercise, and mum gets 45 minutes of guaranteed silent house time to shower or nap.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>🌿 Phase 3: Months 1 to 3 (Routines & Milestones)</h2>
+          <div class="grid-2">
+            <div>
+              <h3>Wake Windows Guide</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Start winding down at the first yawn or eye-rub:</p>
+              <ul style="margin-left: 1.25rem; font-size: 0.88rem; line-height: 1.7;">
+                <li><strong>0–4 Weeks:</strong> 45–60 minutes awake.</li>
+                <li><strong>4–8 Weeks:</strong> 60–75 minutes awake.</li>
+                <li><strong>8–12 Weeks:</strong> 75–90 minutes awake.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>NHS Milestone Schedule</h3>
+              <ul style="margin-left: 1.25rem; font-size: 0.88rem; line-height: 1.7;">
+                <li><strong>Day 10–14:</strong> Midwife hands over to Health Visitor.</li>
+                <li><strong>6–8 Weeks:</strong> GP full maternal & baby physical check.</li>
+                <li><strong>8 Weeks:</strong> First NHS vaccines (6-in-1, Rotavirus, MenB + Calpol!).</li>
+                <li><strong>12 Weeks:</strong> Second NHS immunisations.</li>
+                <li><strong>16 Weeks:</strong> Third NHS immunisations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. POSTPARTUM RECOVERY ================= -->
+      <section id="tab-recovery" class="tab-panel">
+        <h1>Postpartum Recovery & Care</h1>
+        <p class="section-lead">Physical recovery toolkit, staggered pain tracker, mental health watchdog, and breast care.</p>
+
+        <!-- Staggered Pain Relief Calculator -->
+        <div class="card accent">
+          <h2>⏰ Interactive Staggered Pain Relief Schedule</h2>
+          <p style="font-size: 0.92rem; margin-bottom: 1rem;">
+            Staggering Paracetamol and Ibuprofen maintains constant pain relief for perineal healing and uterine after-pains. Enter a start time:
+          </p>
+          <div class="tool-box no-print" style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+            <label for="painStartTime" style="font-size: 0.9rem; font-weight:600;">Wake-up / First Dose Time:</label>
+            <input type="time" id="painStartTime" value="06:00">
+            <button class="btn btn-primary" onclick="calculatePainSchedule()">Generate Day Schedule</button>
+          </div>
+          <div id="painScheduleOutput">
+            <table class="data-table">
+              <thead><tr><th>Time</th><th>Medication</th><th>Dose</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>06:00 AM</td><td><strong>Paracetamol</strong></td><td>1000mg (2 tabs)</td><td>First morning dose with glass of water.</td></tr>
+                <tr><td>08:30 AM</td><td><strong>Ibuprofen</strong></td><td>400mg (2 tabs)</td><td>Always take with breakfast / food.</td></tr>
+                <tr><td>12:00 PM</td><td><strong>Paracetamol</strong></td><td>1000mg (2 tabs)</td><td>Midday top-up.</td></tr>
+                <tr><td>02:30 PM</td><td><strong>Ibuprofen</strong></td><td>400mg (2 tabs)</td><td>With lunch / afternoon snack.</td></tr>
+                <tr><td>06:00 PM</td><td><strong>Paracetamol</strong></td><td>1000mg (2 tabs)</td><td>Evening dose.</td></tr>
+                <tr><td>08:30 PM</td><td><strong>Ibuprofen</strong></td><td>400mg (2 tabs)</td><td>With dinner or milky drink.</td></tr>
+                <tr><td>11:00 PM</td><td><strong>Paracetamol</strong></td><td>1000mg (2 tabs)</td><td>Before sleep shift.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>🩹 Physical Healing Toolkit</h3>
+            <ul style="margin-left: 1.25rem; font-size: 0.9rem; line-height: 1.7;">
+              <li><strong>Upside-down Peri Bottle:</strong> Squirt warm water while peeing to prevent stinging. Pat dry gently.</li>
+              <li><strong>Cooling Padsicles:</strong> Maternity pads with witch hazel chilled in fridge/freezer for swelling.</li>
+              <li><strong>High-Waisted Briefs:</strong> Sits well above any pubic soreness or C-section incision.</li>
+              <li><strong>Lochia Bleeding:</strong> Normal for 3–6 weeks. <em>Red flag:</em> Soaking >1 pad/hour or passing golf ball-sized clots (call NNUH triage).</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🧠 Daily "1 to 10" Emotional Check-In</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Partner asks every evening while baby is settled:</p>
+            <blockquote style="border-left: 3px solid var(--primary); padding-left: 0.75rem; font-style: italic; font-size: 0.95rem;">
+              "How is your head today from 1 to 10?"
+            </blockquote>
+            <ul style="margin-left: 1.25rem; font-size: 0.85rem; line-height: 1.6; margin-top: 0.5rem;">
+              <li><strong>1–4 (Struggling):</strong> Partner takes over chores and baby entirely; focus on rest, food, warmth.</li>
+              <li><strong>5–7 (Treading water):</strong> Normal postpartum exhaustion. Hugs, tea, empathy.</li>
+              <li><strong>8–10 (Thriving):</strong> Celebrate the day!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card alert">
+          <h3 style="margin-top:0; color:var(--danger);">🚨 Breast Care & Mastitis Red Flags</h3>
+          <div class="grid-2" style="font-size: 0.9rem;">
+            <div>
+              <strong>Engorgement Protocol (Days 3–5):</strong>
+              <p>Warm shower/compress 2 mins before feed to trigger letdown. Cold gel packs or chilled cabbage leaves for 10 mins after feed to soothe tissue swelling.</p>
+            </div>
+            <div>
+              <strong>Mastitis Red Flags:</strong>
+              <p>Hot red wedge/streak on breast + flu-like aches + fever >38°C. <em>Action:</em> Do NOT stop nursing, take 400mg Ibuprofen, and call GP / NHS 111 for antibiotics if not improving within 12–24h.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 5. ADMIN & HEALTH ================= -->
+      <section id="tab-admin" class="tab-panel">
+        <h1>Administrative & Healthcare Milestones</h1>
+        <p class="section-lead">Partner-led timeline for Norfolk birth registration, Child Benefit, and NHS immunisations.</p>
+
+        <!-- 8-Week MenB Calpol Timer Calculator -->
+        <div class="card accent">
+          <h2>💉 8-Week MenB Calpol Dose Calculator</h2>
+          <p style="font-size: 0.92rem; margin-bottom: 1rem;">
+            MenB vaccine causes a high fever in 50%+ of babies. NHS advises 3 doses of 2.5ml Infant Paracetamol (Calpol 120mg/5ml). Enter the time the vaccine injection was given:
+          </p>
+          <div class="tool-box no-print" style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+            <label for="vaccineTime" style="font-size: 0.9rem; font-weight:600;">Injection Time at GP:</label>
+            <input type="time" id="vaccineTime" value="10:00">
+            <button class="btn btn-primary" onclick="calculateCalpolSchedule()">Calculate 3 Doses</button>
+          </div>
+          <div id="calpolScheduleOutput">
+            <table class="data-table">
+              <thead><tr><th>Dose</th><th>Scheduled Time</th><th>Amount</th><th>Instructions</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Dose 1</strong></td><td>10:00 AM (Immediate)</td><td>2.5ml Infant Calpol</td><td>Give at the clinic right after injection.</td></tr>
+                <tr><td><strong>Dose 2</strong></td><td>02:30 PM (+4.5 hours)</td><td>2.5ml Infant Calpol</td><td>4 to 6 hours after Dose 1.</td></tr>
+                <tr><td><strong>Dose 3</strong></td><td>07:00 PM (+4.5 hours)</td><td>2.5ml Infant Calpol</td><td>4 to 6 hours after Dose 2.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>🏛️ Norfolk Birth Registration (Within 42 Days)</h2>
+          <div class="grid-2" style="font-size: 0.92rem;">
+            <div>
+              <strong>Norwich Register Office:</strong><br>
+              The Archive Centre, County Hall, Martineau Lane, Norwich, NR1 2DQ.<br>
+              <a href="https://www.norfolk.gov.uk/births-ceremonies-and-deaths/births/register-a-birth" target="_blank" style="color:var(--primary); font-weight:600;">Book Online at Norfolk County Council ↗</a>
+            </div>
+            <div>
+              <strong>What to Bring:</strong>
+              <ul style="margin-left: 1.25rem; font-size: 0.88rem;">
+                <li>Baby’s Red Book (PCHR) / discharge letter with NHS number.</li>
+                <li>Both parents' passports or driving licenses.</li>
+                <li>Payment card for full birth certificates (£12.50 each — buy 2–3 copies).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Partner Administrative Checklist</h2>
+          <ul class="checklist" data-storage-key="admin-tasks">
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text"><strong>Week 1:</strong> Register baby with GP surgery using discharge letter NHS number</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text"><strong>Week 1:</strong> Confirm exact birth date with employer for Paternity Leave formalisation</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text"><strong>Weeks 2–4:</strong> Attend Norwich Register Office appointment to register birth</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text"><strong>Weeks 3–5:</strong> Submit HMRC Child Benefit application online via Government Gateway</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text"><strong>Week 6:</strong> Book GP 6–8 week maternal & baby physical check</div></li>
+            <li class="checklist-item"><input type="checkbox"><div class="checklist-text"><strong>Months 2–3:</strong> Open Junior ISA and update life insurance beneficiary nominations</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= 6. SUPPORT & VISITORS ================= -->
+      <section id="tab-visitors" class="tab-panel">
+        <h1>Practical Support & Visitor Guide</h1>
+        <p class="section-lead">A practical plan to handle visitors, put them to work, and get them to leave gracefully.</p>
+
+        <!-- The 3 Rules -->
+        <div class="card accent">
+          <h2 style="margin-top:0;">🛑 The Three Golden Rules</h2>
+          <div class="grid-3" style="margin-top:1rem;">
+            <div style="background:var(--surface-subtle); padding:1rem; border-radius:var(--radius-md);">
+              <div style="font-weight:700; color:var(--primary);">1. Hospital is for Us</div>
+              <p style="font-size:0.88rem; margin-top:0.25rem;">Zero hospital visitors at NNUH. Family and friends meet baby once settled at home.</p>
+            </div>
+            <div style="background:var(--surface-subtle); padding:1rem; border-radius:var(--radius-md);">
+              <div style="font-weight:700; color:var(--primary);">2. Wash Hands on Entry</div>
+              <p style="font-size:0.88rem; margin-top:0.25rem;">Warm soapy water at the sink before anyone touches or holds baby.</p>
+            </div>
+            <div style="background:var(--surface-subtle); padding:1rem; border-radius:var(--radius-md);">
+              <div style="font-weight:700; color:var(--danger);">3. Zero Kissing</div>
+              <p style="font-size:0.88rem; margin-top:0.25rem;">No kissing baby on face or hands (prevents neonatal cold sores/herpes and RSV).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>🛠️ How to Put Visitors to Work</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.75rem;">Give willing guests a specific job:</p>
+            <ul style="margin-left: 1.25rem; font-size: 0.9rem; line-height: 1.7;">
+              <li><strong>The Admission Ticket:</strong> <em>"Could you pick up a pint of milk and loaf of bread on your way?"</em></li>
+              <li><strong>The Shower Sitter:</strong> Hand baby to guest for 20 mins so mum can take an uninterrupted hot shower.</li>
+              <li><strong>The Dishwasher Swap:</strong> <em>"Feel free to put the kettle on! While it boils, could you empty the dishwasher?"</em></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🚪 How to Get Them to Leave</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.75rem;">Cap visits at 45 minutes max. Partner acts as timekeeper:</p>
+            <ul style="margin-left: 1.25rem; font-size: 0.9rem; line-height: 1.7;">
+              <li><strong>Mum's Exit:</strong> <em>"Baby is showing hunger cues, so I'm taking them upstairs into the quiet for a feed and nap!"</em></li>
+              <li><strong>Partner's Sweep:</strong> <em>"Right, let me grab your coats and walk you to the door before the next cluster feed!"</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copy-Paste Message Templates -->
+        <h2>Quick Copy WhatsApp Templates</h2>
+        <div class="card">
+          <h3>1. Baby Arrival Announcement</h3>
+          <div class="copy-box" id="templateAnnouncement">
+            "Baby [Name] has arrived safely! Mum and baby are both doing brilliantly, and we are completely in love. We are taking the first few days to rest, recover, and bond in our quiet bubble at home. We can't wait to introduce you all once we're settled in. We'll be in touch soon with photos and to arrange short visits!"
+            <button class="btn btn-outline copy-btn" onclick="copyText('templateAnnouncement')">📋 Copy</button>
+          </div>
+
+          <h3 style="margin-top: 1.5rem;">2. Gentle Decline / Raincheck</h3>
+          <div class="copy-box" id="templateDecline">
+            "Thank you so much for thinking of us! We’ve had a rather sleepless night and today needs to be a quiet rest day for mum and baby to recharge. Can we pencil you in for a quick visit next week instead?"
+            <button class="btn btn-outline copy-btn" onclick="copyText('templateDecline')">📋 Copy</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Tab Switching Logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+
+      const targetPanel = document.getElementById(tabId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      const activeBtn = document.querySelector(`.nav-btn[data-tab="${tabId}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Close mobile menu if open
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebarBackdrop').classList.remove('open');
+    }
+
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      backdrop.classList.toggle('open');
+    });
+    backdrop.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('open');
+    });
+
+    // Dark / Night Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+
+    function applyTheme(isDark) {
+      if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Day Mode';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Night Mode';
+      }
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme === 'dark');
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      applyTheme(!isDark);
+    });
+
+    // LocalStorage Checklist Persistence
+    document.querySelectorAll('.checklist').forEach((list) => {
+      const storageKey = list.dataset.storageKey;
+      if (!storageKey) return;
+
+      const savedState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      const items = list.querySelectorAll('.checklist-item');
+
+      items.forEach((item, index) => {
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        if (savedState[index]) {
+          checkbox.checked = true;
+          item.classList.add('checked');
+        }
+
+        item.addEventListener('click', (e) => {
+          if (e.target !== checkbox) {
+            checkbox.checked = !checkbox.checked;
+          }
+          item.classList.toggle('checked', checkbox.checked);
+
+          const currentState = JSON.parse(localStorage.getItem(storageKey) || '{}');
+          currentState[index] = checkbox.checked;
+          localStorage.setItem(storageKey, JSON.stringify(currentState));
+        });
+      });
+    });
+
+    // Gear Filter Buttons
+    document.querySelectorAll('.gear-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gear-filter-btn').forEach(b => {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-outline');
+        });
+        btn.classList.remove('btn-outline');
+        btn.classList.add('btn-primary');
+
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('#tab-gear .checklist-item').forEach(item => {
+          if (filter === 'all' || item.dataset.tier === filter) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Pain Relief Calculator
+    function calculatePainSchedule() {
+      const startInput = document.getElementById('painStartTime').value;
+      if (!startInput) return;
+      const [hours, mins] = startInput.split(':').map(Number);
+
+      function formatTime(addHours, addMins) {
+        let totalMins = (hours * 60 + mins + addHours * 60 + addMins) % 1440;
+        let h = Math.floor(totalMins / 60);
+        let m = totalMins % 60;
+        let ampm = h >= 12 ? 'PM' : 'AM';
+        let displayH = h % 12 || 12;
+        return `${String(displayH).padStart(2, '0')}:${String(m).padStart(2, '0')} ${ampm}`;
+      }
+
+      const schedule = [
+        { time: formatTime(0, 0), med: 'Paracetamol', dose: '1000mg (2 tabs)', note: 'First morning dose with water' },
+        { time: formatTime(2, 30), med: 'Ibuprofen', dose: '400mg (2 tabs)', note: 'Always take with food/breakfast' },
+        { time: formatTime(6, 0), med: 'Paracetamol', dose: '1000mg (2 tabs)', note: 'Midday dose' },
+        { time: formatTime(8, 30), med: 'Ibuprofen', dose: '400mg (2 tabs)', note: 'With lunch or afternoon snack' },
+        { time: formatTime(12, 0), med: 'Paracetamol', dose: '1000mg (2 tabs)', note: 'Evening dose' },
+        { time: formatTime(14, 30), med: 'Ibuprofen', dose: '400mg (2 tabs)', note: 'With dinner / evening meal' },
+        { time: formatTime(17, 0), med: 'Paracetamol', dose: '1000mg (2 tabs)', note: 'Night dose before sleep shift' }
+      ];
+
+      let html = '<table class="data-table"><thead><tr><th>Calculated Time</th><th>Medication</th><th>Dose</th><th>Notes</th></tr></thead><tbody>';
+      schedule.forEach(row => {
+        html += `<tr><td><strong>${row.time}</strong></td><td><strong>${row.med}</strong></td><td>${row.dose}</td><td>${row.note}</td></tr>`;
+      });
+      html += '</tbody></table>';
+      document.getElementById('painScheduleOutput').innerHTML = html;
+    }
+
+    // 8-Week Calpol Calculator
+    function calculateCalpolSchedule() {
+      const timeInput = document.getElementById('vaccineTime').value;
+      if (!timeInput) return;
+      const [hours, mins] = timeInput.split(':').map(Number);
+
+      function formatTime(addHours, addMins) {
+        let totalMins = (hours * 60 + mins + addHours * 60 + addMins) % 1440;
+        let h = Math.floor(totalMins / 60);
+        let m = totalMins % 60;
+        let ampm = h >= 12 ? 'PM' : 'AM';
+        let displayH = h % 12 || 12;
+        return `${String(displayH).padStart(2, '0')}:${String(m).padStart(2, '0')} ${ampm}`;
+      }
+
+      const schedule = [
+        { dose: 'Dose 1', time: `${formatTime(0, 0)} (Immediate)`, amount: '2.5ml Infant Calpol', note: 'Give at clinic right after injection' },
+        { dose: 'Dose 2', time: `${formatTime(4, 30)} (+4.5 hours)`, amount: '2.5ml Infant Calpol', note: '4 to 6 hours after Dose 1' },
+        { dose: 'Dose 3', time: `${formatTime(9, 0)} (+4.5 hours)`, amount: '2.5ml Infant Calpol', note: '4 to 6 hours after Dose 2' }
+      ];
+
+      let html = '<table class="data-table"><thead><tr><th>Dose</th><th>Calculated Time</th><th>Amount</th><th>Instructions</th></tr></thead><tbody>';
+      schedule.forEach(row => {
+        html += `<tr><td><strong>${row.dose}</strong></td><td><strong>${row.time}</strong></td><td>${row.amount}</td><td>${row.note}</td></tr>`;
+      });
+      html += '</tbody></table>';
+      document.getElementById('calpolScheduleOutput').innerHTML = html;
+    }
+
+    // Copy to Clipboard
+    function copyText(elementId) {
+      const box = document.getElementById(elementId);
+      const textToCopy = box.childNodes[0].nodeValue.trim();
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const btn = box.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = '📋 Copy'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
