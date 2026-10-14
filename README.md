@@ -1,5 +1,9 @@
 # Pre- and Post-Natal Family Playbook 👶
 
+[![Live Site](https://img.shields.io/badge/Live%20App-GitHub%20Pages-success?style=for-the-badge&logo=github)](https://samcator1.github.io/pre-and-post-natal/)
+
+**Live Web App:** [https://samcator1.github.io/pre-and-post-natal/](https://samcator1.github.io/pre-and-post-natal/)
+
 Welcome to our family preparation hub for the arrival of our first child. This repository holds our complete, practical planning documents—tailored to our preferences and the **Norfolk and Norwich University Hospital (NNUH)** / **NHS** framework.
 
 Each document is modular, practical, and designed to be easily referenced on a phone or laptop.
